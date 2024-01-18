@@ -46,3 +46,30 @@ create table tblVenta(
   foreign key(idempleado)
   references tbempleado(idEmpleado)
 )
+
+CREATE TABLE tblproducto(
+   idProducto int not null,
+   descripcion varchar(200) not null,
+   existencia int not null,
+   precioUnitario decimal(10,2) not null, 
+   constraint pk_tblproducto
+   primary key (idProducto),
+   constraint unique_descripcion
+   unique(descripcion)
+)
+go
+
+create table detalle_venta(
+  idVenta int not null,
+  idProducto int not null,
+  precio decimal(10,2) not null,
+  cantidad int not null, 
+  constraint pk_detalle_venta
+  primary key(idVenta,idProducto),
+  constraint fk_tblVenta
+  foreign key(idVenta)
+  references tblVenta(idVenta),
+  constraint fk_tblproducto
+  foreign key(idProducto)
+  references tblproducto(idProducto),
+)
