@@ -66,9 +66,43 @@ values(3, 'Refrigerador', 3000, 22, 5),
 
 
 --alter table producto 
---add constraint pk_producto
---primary key(producto)
+--add constraint pk_producto2
+--primary key(idproducto)
+
+select * from producto
 
 update producto 
 set idproducto = 2
 where nombre = 'Paleta de pollo'
+
+update producto 
+set nombre = 'Salchica grande',
+     existencia= 20
+where idProducto = 1
+
+--Eliminar registros de una tabla 
+
+/* delete from tabla 
+   where expresion 
+*/
+
+select * from producto
+   
+delete from producto
+where idProducto = 4
+
+delete from producto 
+where nombre = 'Salchica grande'
+
+delete from producto 
+where precio >=3 and precio <=22
+
+delete from producto 
+where existencia >=3 and existencia <=12
+
+
+
+
+
+
+
