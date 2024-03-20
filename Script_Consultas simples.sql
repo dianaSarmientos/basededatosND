@@ -51,7 +51,8 @@ order by Country desc, CompanyName desc
 --Operador and 
 --Seleccionar todos los clientes de españa y que su nombre comience con G
 select * from Customers
-where  Country = 'Spain' and CompanyName like 'G%' 
+where  Country = 'Spain' and CompanyName like 'G%' 
+
 --Seleccionar todos los clientes de Berlin, alemania con un codigo postal mayor a 1200
 select * from  Customers 
 where city = 'Berlin' and country= 'Germany' and PostalCode >1200
